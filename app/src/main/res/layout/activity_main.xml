@@ -9,60 +9,69 @@
     <EditText
         android:id="@+id/edit_1"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:hint="Enter weight(in-kg)"
+        android:hint="Enter your weigth( in-kg)"
         android:inputType="number">
     </EditText>
     <EditText
         android:id="@+id/edit_2"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="10dp"
-        android:paddingTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/edit_1"
+        android:hint="Enter your heigth(in-cm)"
         android:inputType="number"
-       android:layout_marginRight="10dp"
-       android:hint="Enter Height (in-cm)"
-       android:layout_below="@+id/edit_1">
+        android:paddingTop="10dp" >
     </EditText>
     <Button
-        android:id="@+id/button_1"
+        android:id="@+id/edit_3"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="Calculate bmi"
+        android:layout_height="50dp"
+        android:layout_below="@+id/edit_2"
         android:layout_centerHorizontal="true"
-       android:layout_below="@+id/edit_2">
+        android:text="Calculate BMI" >
     </Button>
-
     <TextView
-        android:id="@+id/textveiw_1"
+        android:id="@+id/edit_4"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/button_1"
+        android:layout_below="@+id/edit_3"
+        android:text="Your BMI valur is:"
+        android:paddingTop="20dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-
-
-        android:layout_marginEnd="10dp"
+        android:textStyle="bold"
+        android:textSize="15dp"
         android:layout_marginBottom="10dp"
-        android:paddingTop="20dp"
-       ></TextView>
-
+        android:layout_marginEnd="10dp">
+    </TextView>
     <TextView
-        android:id="@+id/textview2"
+        android:id="@+id/edit_5"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/textveiw_1"
-        android:layout_marginStart="10dp"
+        android:layout_below="@+id/edit_4"
+        android:layout_centerHorizontal="true"
+        android:text="Status"
+        android:paddingTop="20dp"
+        android:textStyle="bold"
+        android:textSize="15dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-
         android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
         android:gravity="center"
-        android:paddingTop="10dp"
-        android:text=""></TextView>
+        android:layout_marginStart="10dp">
+
+    </TextView>
+
+
+
+
+
+
 
 </RelativeLayout>
