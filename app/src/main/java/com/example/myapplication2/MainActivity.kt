@@ -3,6 +3,7 @@ package com.example.myapplication2
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -114,15 +115,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.call -> {
-                val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:8787878787"))
-                startActivity(intent)
-            }
-            R.id.call -> {
-                if (ContextCompat.checkSelfPermission(
-                        this,
-                        android.Manifest.permission.CALL_PHONE
-                    ) == PackageManager.PERMISSION_GRANTED
-                ) {
+                if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) == PERMISSION_GRANTED) {
                     val intent = Intent(Intent.ACTION_CALL)
                     intent.data = Uri.parse("tel:8787878787")
                     startActivity(intent)
@@ -139,19 +132,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-      val alertDialog=AlertDialog.Builder(this)
+        val alertDialog = AlertDialog.Builder(this)
         alertDialog.setTitle(resources.getString(R.string.app_name))
-       alertDialog.setMessage("Do you want to exit ?")
-        alertDialog.setPositiveButton("Exit",object:DialogInterface.OnClickListener{
+        alertDialog.setMessage("Do you want to exit ?")
+        alertDialog.setPositiveButton("Exit", object : DialogInterface.OnClickListener {
+            override fun onClick(p0: DialogInterface?, p1: Int) {
+                finish()
+
+            }
+        })
+        alertDialog.setNegativeButton("No", object : DialogInterface.OnClickListener {
             override fun onClick(p0: DialogInterface?, p1: Int) {
 
             }
         })
-        alertDialog.setNegativeButton("No",object:DialogInterface.OnClickListener {
-            override fun onClick(p0: DialogInterface?, p1: Int) {
-            }
-        })
-        var alertDialog
+            .show()
+
+    }
+
+}
+
 
 
 
